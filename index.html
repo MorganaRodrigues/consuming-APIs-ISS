@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>API ISS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="imagem-header">
+        <div class="nuvens">
+            <img src="images/nuvem-um.png" style="--anima:1;">
+            <img src="images/nuvem-dois.png" style="--anima:2;">
+            <img src="images/nuvem-tres.png" style="--anima:3;">
+            <img src="images/nuvem-quatro.png" style="--anima:4;">
+            <img src="images/nuvem-cinco.png" style="--anima:5;">
+
+        </div>
+    </div>
+    <section>
+
+        <p class="titulos">Onde está a Estação Espacial Internacional?</p>
+        <p class="titulos">International Space Station - ISS <span class="glyphicon glyphicon-globe"
+                style="font-size: 30px; color: #262626;"></span>
+        </p>
+        <br />
+
+        <div class="alert alert-info">
+            <strong>Atenção!</strong> Esta não é uma API oficial da Estação Espacial Internacional, ela foi criada e é
+            mantida por Bill Shupp desde 2013. Para saber mais <a
+                href="https://blog.shupp.org/2011/09/25/speeding-up-satellite-predictions-in-php-with-hiphop/">clique
+                aqui</a>.
+        </div>
+        <br />
+
+        <div class="card-columns">
+            <div class="card bg-info">
+                <div class="card-body text-center">
+                    <div><img src="images/latitude.png" style="width: 100px;"></div>
+                    <br />
+                    <p class="card-text"><b>Latitude: </b><span id="lat"></span>°</p>
+                </div>
+            </div>
+            <div class="card bg-info">
+                <div class="card-body text-center">
+                    <div><img src="images/longitude.png" style="width: 100px;"></div>
+                    <br />
+                    <p class="card-text"><b>Longitude: </b><span id="lon"></span>°</p>
+                </div>
+            </div>
+            <div class="card bg-info">
+                <div class="card-body text-center">
+                    <div><img src="images/mountain.png" style="width: 100px;"></div>
+                    <br />
+                    <p class="card-text"><b>Altitude: </b><span id="alt"></span> Km</p>
+                </div>
+            </div>
+            <div class="card bg-info">
+                <div class="card-body text-center">
+                    <div><img src="images/speedometer.png" style="width: 100px;"></div>
+                    <br />
+                    <p class="card-text"><b>Velocidade: </b><span id="vel"></span> Km/h</p>
+                </div>
+            </div>
+            <div class="card bg-info">
+                <div class="card-body text-center">
+                    <div><img src="images/dia-e-noite.png" style="width: 100px;"></div>
+                    <br />
+                    <p class="card-text"><b>Visibilidade: </b><span id="vis"></span></p>
+                </div>
+            </div>
+            <div class="card bg-info">
+                <div class="card-body text-center">
+                    <div><img src="images/satelite.png" style="width: 100px;"></div>
+                    <br />
+                    <p class="card-text"><b>Área de cobertura: </b><span id="are"></span> dBW</p>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+
+        <p class="titulo-final">Veja no mapa o satélite em suas respectivas coordenadas:</p>
+        <div id="mapa-estacao"></div>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+            integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+            crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+            crossorigin=""></script>
+        <script src="./js/script.js"></script>
+        <br />
+        <br />
+
+        <p class="titulo-final">Um pouco de história...</p>
+        <p class="p-corpo">&nbsp; &nbsp; &nbsp; &nbsp;
+            Na baixa órbita terrestre, a uma altitude de 400 quilômetros, um laboratório espacial gigante percorre o
+            globo a uma velocidade de 27.700 km/h, completando 15,70 voltas em nosso planeta, todos os dias. Estamos
+            falando da Estação Espacial Internacional (ISS, na sigla em inglês), um dos maiores experimentos científicos
+            já realizados no espaço, tendo custado cerca de US$ 150 bilhões. Além de um grande marco na ciência, a
+            história da ISS também é uma história sobre a colaboração entre vários países, em especial entre Estados
+            Unidos e Rússia - o acordo assinado entre ambos decretou o fim da corrida espacial e da Guerra Fria, e deu
+            início à montagem da estação orbital. O início da construção da ISS foi em 1998 e em 31 de outubro de 2000,
+            a primeira tripulação foi lançada da Rússia, com três astronautas, mas ela só foi concluída oficialmente em
+            8 de julho de 2011. Ainda hoje ela serve de base e laboratório científico e é constantemente habitada por
+            tripulações, com permanência média de seis meses.
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            Em condições climáticas favoráveis, isto é, no céu noturno sem nuvens para atrapalhar, a ISS pode ser vista
+            a
+            olho nu. Mas não é sempre que ela passa pelos mesmos lugares, então vale a pena acompanhar sua trajetória
+            para
+            saber se ela está por perto da sua região. A NASA e a ESA fornecem alguns links interessantes, você pode uma
+            <a href="https://eol.jsc.nasa.gov/ESRS/HDEV/">visão da Terra</a> a partir da ISS e até mesmo fazer uma <a
+                href="https://www.nasa.gov/mission_pages/station/main/suni_iss_tour.html">tour</a> por ela e conferir
+            como é a vida no dia a dia por
+            lá, com estes vídeos da NASA, no qual a tripulação mostra um pouco dos módulos da estação.
+        </p>
+
+        <br />
+        <div class="polaroid">
+            <img src="images/nasa.png" style="width:100%">
+            <div class="container">
+                <p><i><b></b>National Aeronautics and Space Administration</b></i></p>
+            </div>
+        </div>
+        <br />
+        <p class="fim">
+            <i>Copyright </i>&copy; <i> Morgota's development.</i> Todos os direitos
+            reservados.
+            <img src="images/orange.png" style="width: 18px;">
+        </p>
+    </section>
+</body>
+
+</html>
