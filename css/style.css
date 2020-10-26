@@ -74,7 +74,7 @@ section {
   margin-bottom: 20px;
   text-align: center;
   font-family: "Aldrich", Times, serif;
-  font-size: 30px;
+  font-size: 25px;
   color: #17a2b8;
 }
 
@@ -121,5 +121,62 @@ div.container {
   }
   .container {
     font-size: 10px;
+  }
+}
+
+.header {
+  grid-area: header;
+  background-color: #fafafafa;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header header header header header' 
+    'left middle middle middle middle right' 
+    'footer footer footer footer footer footer';
+} 
+
+.left,
+.middle,
+.right {
+  padding: 10px;
+  
+}
+
+.left {
+  grid-area: left;
+}
+
+.middle {
+  grid-area: middle;
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.8;
+  padding: 10px;
+}
+
+.right {
+  grid-area: right;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #fafafafa;
+  padding: 10px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+      'header header header header header header' 
+      'left left left left left left' 
+      'middle middle middle middle middle middle' 
+      'right right right right right right' 
+      'footer footer footer footer footer footer';
   }
 }
